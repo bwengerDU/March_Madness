@@ -38,4 +38,5 @@ The tournament teams data was them used to train the model (win column should al
 
 ## Results
 
+The odds of predicting a perfect brack are 1 in 9.2 Quintillion. Bearing this in mind we have tamped our expectations down from the expectation of a perfectly predicted bracket. 
 ## Conclusion
