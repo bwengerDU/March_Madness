@@ -1,0 +1,7 @@
+﻿,Feature (High to Low),% of importance (High to Low)
+Round 1,"Assist Turnover Ratio Rank, Win-Loss Rank, Scoring Margin Rank, Field Goal % Defense Rank, Turnover Margin Rank",0.0702 - 0.0546
+Round 2,"Fouls Per Game Rank, Win-Loss Rank, Field Goal % Defense Rank, Rebound Margin Rank, Three Pt FG Defense Rank",0.0684 - 0.0545
+Round 3,"Win-Loss Rank, Scoring Defense Rank, Three Pt FG Defense Rank, Turnover Per Game Rank, Turnover Margin Rank",0.0892 - 0.0562
+Round 4,"Steals Per Game Rank, Scoring Offense Rank, Win-Loss Rank, Field Goal % Rank, Rebound Margin Rank",0.0785 - 0.0566
+Round 5,"Win-Loss Rank, BlocksPerGame Rank, Field Goal % Rank, Scoring Offense Rank, Three Pt FG Defense Rank",0.1244 - 0.0583
+Round 6,"Steals Per Game Rank, BlocksPerGame Rank, Turnover Margin Rank, Field Goal % Defense Rank, Three Pt FG % Rank",0.0751 - 0.0587
