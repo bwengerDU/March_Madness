@@ -30,6 +30,12 @@ Cleaning and transforming the data resulted in **?number of columns?**  This Dat
 
 We also used the list of team names from the tournament, to shorten the aggregate data so that only the statistics of the teams in each tournament were represented and used for testing data.  This was a necessary step since we are only worried about predicting wins during the tournament (Easiest way is drop rows with null values; non tournament teams will have null values for "Tournament Wins" column).
 
+### Logistic Regression
+
+Running a successful logistic regression model required a large amount of tinkering to our initial approach. In order to win the March Madness tournament a team must win 6 times while the runner up will have 5 wins, there will be two teams with 4 wins, 4 teams with 3 wins, 8 teams with 2 wins, and 16 teams with one win. Across the NCAA we will have 324 teams with 0 wins. This significant imbalance between the 1 teams with 6 wins and the 324 teams with 0 wins means that we will have a very high success rate in determining teams that will NOT win, but we will have very little chance of successfully predicting a team that can achieve 6 wins. Wins are the only outcome we aim to predict so we must adjust the data to make it more suitable for analysis. In order to maximize the effectiveness of prediction we instead adopted a round-by-round approach in which we examined whether a team achieved a win depending on which round it is. For instance, the national championship team will no longer be a 6 win team, but instead a team that has 1 win in each of the tournament's six rounds. This change significantly improved our ability to predict the success of teams across all rounds. 
+
+In the first round we are attempting to predict the 32 wins in the round as a 1, compared to the 32 teams that will have a loss as a 0. The second issue we run across is that the number of teams predicted to win will be halfed every round while the number of losses, 0, will increase every round and we will begin to have similar issue as before as 0s will begin to overwhelm the data. To combat this we dropped the 0 values from the previous round so that we were only examining the teams that were capable of advancing to the second round in order to examine how well those first round winners would perform to advance to the next round. Applying these two adjustments to our data allows us to significantly improve our predictions. 
+
 ### Machine Learning Model
 As an initial analysis, we used the RandomForestClassier model to generate an importance_list (see Figure 2), to see which of our **number of features?** were of the most predictive value with the aggregate data.
 
@@ -38,5 +44,7 @@ The tournament teams data was them used to train the model (win column should al
 
 ## Results
 
-The odds of predicting a perfect brack are 1 in 9.2 Quintillion. Bearing this in mind we have tamped our expectations down from the expectation of a perfectly predicted bracket. 
+The odds of predicting a perfect brack are 1 in 9.2 Quintillion. Bearing this in mind we have tamped our expectations down from the expectation of a perfectly predicted bracket. We instead feel the more realistic gauge of our model would be to compare it to several different groups of categorized brackets in order to see how well we would perform against different levels of competition. I simulated 5 different brackets that were predicted by the flipping of a coin, one group was comprised of celebrity brackets, one group was comprised of sports writers and analysts, and the last group was from my office pool. I also created a "Super Group" in which I took the top three performers from each group and compared them to three of our models in order to determine how we would perform against the best of all possible competitor types. 
+
+
 ## Conclusion
