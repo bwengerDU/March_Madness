@@ -1,5 +1,14 @@
 # March_Madness
 
+## Authors
+The following people collaborated on this project as part of our final grade for the University of Denver 2021-2022 (24wk) Bootcamp for Data Analytics.  Click on their names to visit their GitHub pages to learn more about them and their work:
+* [Bryan Wenger](https://github.com/bwengerDU)
+* [Philip Kirwin](https://github.com/pheel24)
+* [Baiyu Hua](https://github.com/harryhua2021)
+* [Bart Black](https://github.com/bartblack13)
+
+You can also visit the project's deployed website here and visit the public Tableau page here. 
+
 ## Purpose
 Every Year, millions of people fill out a March Madness Bracket and try to predict the winners of each matchup, hoping that they can correctly pick the most winning teams and potentially win some money from friends, co-workers, or from online betting.  In fact, Nielsen said in a 2019 study ([study link](https://www.nielsen.com/wp-content/uploads/sites/3/2019/04/case-study-brackets-and-baskest-2016.pdf)), that "According to the American Gaming Association (AGA), 40 million people filled out approximately 70 million brackets last year, and waged $9.2 billion on March Madness through office pools, Nevada sports books, offshore sites and bookmakers.  
 The desire to correctly predict a winning bracket, or even a perfect bracket, is so alluring that Google hosts an annual contest for machine learning groups to try and write computer algorithms to predict the winners of March Maddness.  While the idea of using computer algorithms to increase the odds of a perfect bracket seems like an obvious solution, the reality is the odds of predicting a perfect bracket are infinitesimally small.  According to numbers from the NCAA ([found here](https://www.ncaa.com/news/basketball-men/bracketiq/2022-03-10/perfect-ncaa-bracket-absurd-odds-march-madness-dream)), the odds are as follows:
@@ -8,13 +17,7 @@ The desire to correctly predict a winning bracket, or even a perfect bracket, is
 * if you know a little something about basketball - 1 in 120.2 billion
 
 
-The focus of this project was to use supervised machine learning models to accurately predict the teams that would advance/win in each of the 6 rounds of the tournament, eventually picking the correct team to win the tournament.  As a secondary goal, we were interested in seeing if our machine learning model could win an office pool, or at minimum even beat a coin flip.  
-
-The following people collaborated on this project as part of the University of Denver 2021-2022 Bootcamp for Data Analytics.  Click on their names to visit their GitHub pages to learn more about them and their work:
-* [Bryan Wenger](https://github.com/bwengerDU)
-* [Philip Kirwin](https://github.com/pheel24)
-* [Baiyu Hua](https://github.com/harryhua2021)
-* [Bart Black](https://github.com/bartblack13)
+**The focus of this project** was to use a supervised machine learning model to accurately predict the teams that would advance/win in each of the 6 rounds of the tournament, eventually picking the correct team to win the tournament.  As a secondary goal, we were interested in seeing if our machine learning model could win an office pool, or at minimum even beat a coin flip.  
 
 
 ## Method
@@ -57,6 +60,20 @@ Now that we had the correct number of teams, we calculated out our bracket score
 
 When we load these scores into our office pool, our Theoretical bracket won 3rd place with 98 points.  When the points per round are graphed for all the brackets we see that our model is in the lead until the very last round, where Frank and Paige pull ahead with 114pts and 103pts, respectively.  Our Actual bracket with 44pts ranks near the bottom at 3rd from last, only beating the 2 coin flip brackets (**see image**)
 
+**How many brackets did we start with, how many are in the final image?  Our office pool consisted of # of people made up of celebrities, experts, Bryan's Friends, purely coin flip brackets, a theoretical score for the Logistic Regression model, a theoretical and actual score for the Random Forest Model.**
+
+**Importance list!!!!**
+
+## Conclusion
+
+The odds of predicting a perfect brack are 1 in 9.2 Quintillion. Bearing this in mind we have tamped our expectations down from the expectation of a perfectly predicted bracket. We instead feel the more realistic gauge of our model would be to compare it to several different groups of categorized brackets in order to see how well we would perform against different levels of competition. I simulated 5 different brackets that were predicted by the flipping of a coin, one group was comprised of celebrity brackets, one group was comprised of sports writers and analysts, and the last group was from my office pool. I also created a "Super Group" in which I took the top three performers from each group and compared them to three of our models in order to determine how we would perform against the best of all possible competitor types. 
+
+calculated out theoretical scores and actual scores of our model's bracket
+
+
+
+
+## Delete below?
 As an initial analysis, we used the RandomForestClassier model to generate an importance_list (see Figure 2), to see which of our **number of features?** were of the most predictive value with the aggregate data.
 
 The tournament teams data was them used to train the model (win column should already be added to the dataframe at this point and will serve as the y_train).
@@ -69,10 +86,5 @@ In the first round we are attempting to predict the 32 wins in the round as a 1,
 
 
 
-## Results
 
-The odds of predicting a perfect brack are 1 in 9.2 Quintillion. Bearing this in mind we have tamped our expectations down from the expectation of a perfectly predicted bracket. We instead feel the more realistic gauge of our model would be to compare it to several different groups of categorized brackets in order to see how well we would perform against different levels of competition. I simulated 5 different brackets that were predicted by the flipping of a coin, one group was comprised of celebrity brackets, one group was comprised of sports writers and analysts, and the last group was from my office pool. I also created a "Super Group" in which I took the top three performers from each group and compared them to three of our models in order to determine how we would perform against the best of all possible competitor types. 
 
-calculated out theoretical scores and actual scores of our model's bracket
-
-## Conclusion
