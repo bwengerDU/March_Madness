@@ -35,8 +35,8 @@ Cleaning and transforming the data resulted in 53 columns, including the team na
 ![This is an image](https://github.com/bwengerDU/March_Madness/blob/main/Data_Creation/Bart/Regex_extract_replace_combo.png)<br><br>
 **Figure 1b & c:** Python script using Regex script for extracting Conference name (top); Python script using Regex script for "deleting" Conference name and parentheses (bottom) <br><br>
 
-![This is an image]()<br><br>
-**Figure 2:** Python script for to convert tournament wins to binary win-loss category for each round <br><br>
+![This is an image](https://github.com/bwengerDU/March_Madness/blob/main/Data_Creation/Bart/binary_wins-loss_func.png)<br><br>
+**Figure 2:** Python script to convert tournament wins to binary win-loss category for each round <br><br>
 
 
 ### Model Choice and Training
@@ -63,12 +63,12 @@ As initially mentioned, we set out to develop a machine learning model that coul
 During the training phase of our project, we were hopeful that the RandomForest Model was a great choice.  When we compared the model metrics to that of other models, including the Logistic regression model, the RandomForestClassifier outperformed the other models, but achieving higher accurcy scores per round prooved to be challenging.  As can be seen from the graphs, our model started off with a 66.45% accuracy rate, but eventually dropped to a 33.33% accuracy (**See Figure 3**).  This was still better than the Logistic Regression on average.  We argue that even with significant drop and a low accuracy score of 33.33%, that our model still out performs a person selecting the winner at random, which would have a 1.56% (1/64) chance of a correct pick.
 When comparing our model to the Logistic Regression model, we had slightly better perfomance for 4 rounds.  The biggest downfall of the Logistic Regression model was that it failed to predict any teams winning the championship.  Although the Random Forest was able to predict winners for the last round, it had it's own prediction problems.<br><br>  
 
-![This is an image]()<br><br>
-**Figure 3:** Model accuracy scores for Logistic Regression (top) and Random Forest (bottom) for each round <br><br>
+![This is an image](https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/LogReg_vs_RFC_graph_accuracy.png)<br><br>
+**Figure 3:** Model accuracy scores for Random Forest (left) and Logistic Regression (right) for each round <br><br>
 
 On average, March Madness starts off with 64 teams.  Every round is single elimination, cutting the number of advancing teams by 1/2.  This repeats 6 rounds until a single winner emerges.  However, our model generated 41 winning teams for the first round, when there should have only been 32.  This trend of predicting a surplus of winning teams persisted through the final round, where round 5 had 5 teams instead of 2, and round 6 had 3 teams predicted to win the final game, instead of 1 (**See Figure 4**).  In the end, our model predicted Arizona, Gonzaga, and Murray St. to win.  In reality, none of those teams made it to the final game, and Kansas was the champion team. <br><br> 
 
-![This is an image]()<br><br>
+![This is an image](https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/Team_advancers.png)<br><br>
 **Figure 4:** Teams predicted to win each round <br><br>
 
 Since we wanted to also see how our model's bracket would do in an office pool, we needed to calculate our bracket's score.  We did this in two ways: a theoretical calculation, and an actual calculation. Our theoretical calculation was obtained by multiplying our model's accuracy scores by the total number of available points per round, and summing the rounds' scores.  Each round has 32 available points.  Our theoretical score for the model was 98pts. 
@@ -78,10 +78,10 @@ Now that we had the correct number of teams, we calculated out our actual bracke
 
 Our office pool contained 16 brackets consisting of celebrities, experts, Bryan's Friends, purely coin flip brackets, theoretical score for the Logistic Regression model, and a theoretical and actual score for the Random Forest Model.  When we loaded these scores into our office pool, our Theoretical bracket won 3rd place with 98 points, but our Actual bracket, with 44pts, ranked 3rd from last, only beating the 2 coin flip brackets.  When the points per round are graphed for all the brackets we see that our theoretical bracket is in the lead until the very last round, where Frank and Paige pull ahead with 114pts and 103pts, respectively (**See Figure 5**). Again, comparing the theoretical scores Logistic Regression model and the Random Forest model, we see that they are similar, with the Random Forest losing ground in rounds 3 and 4, but making a come back in round 5 and 6 (**See Figure 6**).
 
-![This is an image]()<br><br>
+<img src="https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/top3_performers.png" width="600"><br><br>
 **Figure 5:** Office pool bracket Scores for each round <br><br>
 
-![This is an image]()<br><br>
+<img src="https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/LogReg_vs_RFC_graph.png" width="600"><br><br>
 **Figure 6:** Theoretical bracket Scores for both Logistic Regression (Pink) and Random Forest (Blue) for each round <br><br>
 
 We performed all of the above analysis with a data set that included columns for each Conference, generated by the OneHotEncoder method.  Due to our model's low performance in the later rounds, we questioned if our model could be improved by removing the Conference columns.  We did so, then re-ran the training portion of our code for each round.  This resulted in a loss of accuracy in every round, and a final prediction of 6 teams winning the championship game.  We then aborted any further analysis with the conference data removed.
@@ -89,7 +89,7 @@ We performed all of the above analysis with a data set that included columns for
 Knowing that our model was unable to correctly predict the accurate number of teams per round, in addition to our decreasing accuracy as rounds progressed, we were interested in knowing which features could be used to make a statistically based judgment call on who to drop or advance.  To do this we generated feature importance lists for each round, then sorted the rounds according to their scores, where score and importance are proportional.  Importance values were calculated out 19 decimal places.  Although evaluated, the importance of a team’s conference, on average was less than a percent, many of which were rounded to zero.  In Round 6, however, being part of the Big 10 or ACC scored 0.0331 and 0.0297, respectively, which was more important than Win-Loss Rank, Field Goal % Rank, and Turnover Per Game Rank.  We then filtered out the top 5 features for each round (**See Figure 7**).  The categories were seemingly random with the most frequent features  in the top 5 being: Win-Loss Rank (5 rounds), Turnover Margin Rank (3 rounds), and Field Goal % Defense Rank (3 Rounds).
 
 
-![This is an image]()<br><br>
+<img src="https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/Importance_List_2.png" width="500"><br><br>
 **Figure 7:** Top 5 most important features, by round <br><br>
 
 
