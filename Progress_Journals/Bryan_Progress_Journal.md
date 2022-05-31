@@ -14,5 +14,5 @@ My biggest takeaway from this week's work is that we now have a secondary projec
 
 
 ## Week 4
-
+Tableau has been used extensively this week in order to create visuals for our data. Line charts have been the most useful for showcasing the relative performance of different brackets across the 6 rounds of the tournament bracket. It has taken a lot of tweaking to format the visuals in a way that allows different brackets to be distinguished from one another. Excluding and highlight functions have been very helpful for isolating particular data sets. Essentially I made sure the base graph was as good as I could make it and all subsequent analysis and discussion was some alteration of the original graph. I did create a hypothetical graph in my presentation as well because I felt it necessary to highlight the major takeaway discovered last week.   
 
