@@ -93,7 +93,9 @@ Knowing that our model was unable to correctly predict the accurate number of te
 **Figure 7:** Top 5 most important features, by round <br><br>
 
 
-## Conclusion
+## Discussion and Conclusion
+
+### Discussion
 In considering the above results, our group is left with one conclusion: that there is no better name than March Madness for a tournament, where single elimination widdles down 64 teams, in 6 rounds, to crown a single team as the champion.  Why? Because as the name suggests, it is madness!  On the surface, anything can happen, and upsets are common place, with mediocre teams beating number 1 ranked teams by a single point at times.  It's almost as if your only hope to win a bracket against your co-workers is to flip a coin, or choose a team based on which one has the cooler mascot!  Even when you dig deeper, even as a college basketball guru, even when you pit a machine learning algorithm against 11yrs of statistical data for 351 teams displayed across 53 columns, even then, it is still incredibly challenging to accurately pick a perfect bracket.
 
 When our team first decided to take on this data analysis problem, we knew that we would be challenged. This project did not disappoint in creating challenges for us to overcome.  Initially, we intended to carry out one round of model training, where are only target would be the Tournament Wins column, containing integers 0-6.  We initially started off by running linear regression on various single features, to see what the data might reveal, and if we might be able to narrow down our feature list.  We also envisoned geting numerical predictions for wins, calculated out as a decimal, where a match up might come down to rounding the thousandths place to predict a 4 versus a 5, for example.  But this was not the case.  When graphed, our predictions were cleanly segregated on 6 separated horizontal values, y = 0, 1, 2, 3, 4, 5, 6.  We did not initially understand why.  We now know it's because out target data, while apparently numerical, is really 6 different categories that a team could be predictively binned into.  
@@ -112,31 +114,7 @@ Considering the limitations of time due to our class schedule, we are happy with
 
 There are several challenges that our model faces.  The first is that our data is limited in nature.  We can only obtain a set number of rows of data for each season, limited on the amount of teams.  There is always going to be an imbalance of losses versus wins, since the goal of a tournament is to have only 1 winner.  The data already being limited, is truncacted every round, causing a loss of statistical power.  With the current strategy and approach, poor model metrics and poor predictive power will result in incorrect number of advancing teams per round.  This is a problem, because then we have to add in unbiased methods of dropping or advancing teams, and these randomized methods have their own probabilities that when combined with our model, decrease our odds of success even further.  Even by using the list of top 5 most important features to make an educated guess, the predictors seem random, except for Win-Loss Rank.  However, we know from history that even number 1 ranked teams can be defeated in the first round by low ranked teams, so again, our confidence in this predictor dwindles.  To ensure the correct number of teams per round, one option could be to redesign our model to predict a winner from a 2-team a match up.
 
+### Conclusion
 In conclusion, we are proud of our model, and the challenges that we overcame to develop it and to proove the concept.  We realize that our model can be improved, and we have a good idea of how we could approach that. We argue, given the stagering odds against us, that the ability of our model to come in 3rd place with a theortical score, is a victory.  In the end, however, we are humbled and reminded that March Madness doesn't care about statistics, and to us that is pure insanity!
-     
-
-## Delete below?
-
-
-The odds of predicting a perfect brack are 1 in 9.2 Quintillion. Bearing this in mind we have tamped our expectations down from the expectation of a perfectly predicted bracket. We instead feel the more realistic gauge of our model would be to compare it to several different groups of categorized brackets in order to see how well we would perform against different levels of competition. I simulated 5 different brackets that were predicted by the flipping of a coin, one group was comprised of celebrity brackets, one group was comprised of sports writers and analysts, and the last group was from my office pool. I also created a "Super Group" in which I took the top three performers from each group and compared them to three of our models in order to determine how we would perform against the best of all possible competitor types. 
-
-calculated out theoretical scores and actual scores of our model's bracket
-
-
-
-
-
-As an initial analysis, we used the RandomForestClassier model to generate an importance_list (see Figure 2), to see which of our **number of features?** were of the most predictive value with the aggregate data.
-
-The tournament teams data was them used to train the model (win column should already be added to the dataframe at this point and will serve as the y_train).
-
-### Logistic Regression
-Running a successful logistic regression model required a large amount of tinkering to our initial approach. In order to win the March Madness tournament a team must win 6 times while the runner up will have 5 wins, there will be two teams with 4 wins, 4 teams with 3 wins, 8 teams with 2 wins, and 16 teams with one win. Across the NCAA we will have 324 teams with 0 wins. This significant imbalance between the 1 teams with 6 wins and the 324 teams with 0 wins means that we will have a very high success rate in determining teams that will NOT win, but we will have very little chance of successfully predicting a team that can achieve 6 wins. Wins are the only outcome we aim to predict so we must adjust the data to make it more suitable for analysis. In order to maximize the effectiveness of prediction we instead adopted a round-by-round approach in which we examined whether a team achieved a win depending on which round it is. For instance, the national championship team will no longer be a 6 win team, but instead a team that has 1 win in each of the tournament's six rounds. This change significantly improved our ability to predict the success of teams across all rounds. 
-
-In the first round we are attempting to predict the 32 wins in the round as a 1, compared to the 32 teams that will have a loss as a 0. The second issue we run across is that the number of teams predicted to win will be halfed every round while the number of losses, 0, will increase every round and we will begin to have similar issue as before as 0s will begin to overwhelm the data. To combat this we dropped the 0 values from the previous round so that we were only examining the teams that were capable of advancing to the second round in order to examine how well those first round winners would perform to advance to the next round. Applying these two adjustments to our data allows us to significantly improve our predictions. 
-
-
-
-
-
+<br><br><br>
 
