@@ -79,7 +79,7 @@ Now that we had the correct number of teams, we calculated out our actual bracke
 
 Our office pool contained 16 brackets consisting of celebrities, experts, Bryan's Friends, purely coin flip brackets, theoretical score for the Logistic Regression model, and a theoretical and actual score for the Random Forest Model.  When we loaded these scores into our office pool, our Theoretical bracket won 3rd place with 98 points, but our Actual bracket, with 44pts, ranked 3rd from last, only beating the 2 coin flip brackets.  When the points per round are graphed for all the brackets we see that our theoretical bracket is in the lead until the very last round, where Frank and Paige pull ahead with 114pts and 103pts, respectively (**See Figure 5**). Again, comparing the theoretical scores Logistic Regression model and the Random Forest model, we see that they are similar, with the Random Forest losing ground in rounds 3 and 4, but making a come back in round 5 and 6 (**See Figure 6**).
 
-<img src="https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/top3_performers_2.png" width="600"><br><br>
+<img src="https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/top3_performers.png" width="600"><br><br>
 **Figure 5:** Office pool bracket Scores for each round <br><br>
 
 <img src="https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/LogReg_vs_RFC_graph_2.png" width="600"><br><br>
