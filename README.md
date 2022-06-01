@@ -7,7 +7,8 @@ The following people collaborated on this project as part of our final grade for
 * [Baiyu Hua](https://github.com/harryhua2021)
 * [Bart Black](https://github.com/bartblack13)
 
-You can also visit the project's deployed website here and visit the public Tableau page here. 
+You can also visit the project's deployed website here and visit the public Tableau page here. The accompanying presentation slides can be found here:
+https://docs.google.com/presentation/d/e/2PACX-1vRD0MVbl59_Q8u26WLlpZNq8-A7JFNo3jpE8H8WVeE2EBXTh2gqovyUmuc5YGpMAeTIfMaH00dzlIiu/pub?start=false&loop=false&delayms=3000
 
 ## Purpose
 Every Year, millions of people fill out a March Madness Bracket and try to predict the winners of each matchup, hoping that they can correctly pick the most winning teams and potentially win some money from friends, co-workers, or from online betting.  In fact, Nielsen said in a 2019 study ([study link](https://www.nielsen.com/wp-content/uploads/sites/3/2019/04/case-study-brackets-and-baskest-2016.pdf)), that "According to the American Gaming Association (AGA), 40 million people filled out approximately 70 million brackets last year, and waged $9.2 billion on March Madness through office pools, Nevada sports books, offshore sites and bookmakers.  
