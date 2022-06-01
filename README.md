@@ -50,7 +50,7 @@ Having 6 different binary win-loss columns required that we have 6 different tar
 * Determined which team stats were the most important per round (feature importance lists)
 
 ### Running Model on Unknown Data
-Once our model was trained for each round, we loaded our unknown data set (from the 2021-2022 season).  After loading the unknown data into Jupyter Notebook, we followed a similar approach per round as when we trainied out model, doing the following:
+Once our model was trained for each round, we loaded our unknown data set (from the 2021-2022 season).  After loading the unknown data into Jupyter Notebook, we followed a similar approach per round as when we trainied our model, doing the following:
 
 * Scaled the data, loaded the data into our model
 * Generated win-loss predictions 
@@ -61,7 +61,7 @@ Once our model was trained for each round, we loaded our unknown data set (from 
 ## Results
 As initially mentioned, we set out to develop a machine learning model that could predict a list of advancing teams per round throughout the March Madness Tournament, hoping to pick the winning team.  We also determined if our model could win an office pool. 
 
-During the training phase of our project, we were hopeful that the RandomForest Model was a great choice.  When we compared the model metrics to that of other models, including the Logistic regression model, the RandomForestClassifier outperformed the other models, but achieving higher accurcy scores per round prooved to be challenging.  As can be seen from the graphs, our model started off with a 66.45% accuracy rate, but eventually dropped to a 33.33% accuracy (**See Figure 3**).  This was still better than the Logistic Regression on average.  We argue that even with significant drop and a low accuracy score of 33.33%, that our model still out performs a person selecting the winner at random, which would have a 1.56% (1/64) chance of a correct pick.
+During the training phase of our project, we were hopeful that the RandomForest Model was a great choice.  When we compared the model metrics to that of other models, including the Logistic regression model, the RandomForestClassifier outperformed the other models, but achieving higher accurcy scores per round prooved to be challenging.  As can be seen from the graphs, our model started off with a 66.45% accuracy rate, but eventually dropped to a 33.33% accuracy (**See Figure 3**).  This was still better than the Logistic Regression on average.  We argue that even with significant drop and a low accuracy score of 33.33%, that our model still outperforms a person selecting the winner at random, which would have a 1.56% (1/64) chance of a correct pick.
 When comparing our model to the Logistic Regression model, we had slightly better perfomance for 4 rounds.  The biggest downfall of the Logistic Regression model was that it failed to predict any teams winning the championship.  Although the Random Forest was able to predict winners for the last round, it had it's own prediction problems.<br><br>  
 
 ![This is an image](https://github.com/bwengerDU/March_Madness/blob/main/Data_Analysis/Bart/LogReg_vs_RFC_graph_accuracy.png)<br><br>
