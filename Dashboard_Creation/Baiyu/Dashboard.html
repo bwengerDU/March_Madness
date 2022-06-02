@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>W3.CSS Template</title>
+<title>March Madness Prediction</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+body {
+  background: url('https://c1.wallpaperflare.com/preview/856/636/861/ball-basket-basketball-black-and-white.jpg') no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color:black;
+}
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif, "Fantasy";}
 .w3-sidebar {
   z-index: 3;
   width: 250px;
   top: 43px;
   bottom: 0;
   height: inherit;
-}
+  }
 </style>
 </head>
 <body>
-
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Data</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Analysis</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Results</a>
+    <a href="#Home" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+    <a href="#Data" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Data</a>
+    <a href="#Analysis" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Analysis</a>
+    <a href="#Results" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Results</a>
   </div>
 </div>
 
@@ -40,67 +47,110 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">March Madness Predictor</h1>
-      <p>Our Project Overview Go Here.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Graphs</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">Graphs</p>
-    </div>
+      <h1 class="w3-text-white" id="Home"><b>March Madness Predictor</b></h1>
+      <p style="color:#FFFFFF";>Every Year, millions of people fill out a March Madness Bracket and try to predict the winners of each matchup, 
+        hoping that they can correctly pick <br>the most winning teams and potentially win some money from friends, co-workers. 
+         The desire to correctly predict a winning bracket, or even a perfect bracket, 
+         <br>is so alluring that Google hosts an annual contest for machine learning groups to try and write computer algorithms to predict
+          the winners of March Maddness.<br>While the idea of using computer algorithms to increase the odds of a perfect bracket seems like an obvious solution, 
+          the reality is the odds of predicting a <br>perfect bracket are infinitesimally small. According to numbers from the NCAA, 
+          the odds are as follows:</p>
+          <p style="color:#FFFFFF";><br>if you just guess or flip a coin - 1 in 9,223,372,036,854,775,808 - 1 in 9.2 quintillion (a quintillion = a billion billion)
+       <br>if you know a little something about basketball - 1 in 120.2 billion</p>
+       <p style="color:#FFFFFF";><br>The focus of this project was to use a supervised machine learning model to accurately predict the teams that would advance/win in each of the 6 rounds of the tournament, 
+       <br>eventually picking the correct team to win the tournament. As a secondary goal, 
+        we were interested in seeing if our machine learning model could win an office pool, <br>or at minimum even beat a coin flip.</p>
+     <img src="/Users/baiyuhua/Desktop/March_Madness/Dashboard_Creation/Baiyu/css/images/Completed_Bracket.png" 
+	    style="object-fit:contain;
+            width:900px;
+            height:700px;
+            border: solid 1px #CCC"/>
+  </div>
+    
   </div>
 
   <div class="w3-row">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Data</h1>
-      <p>Our Data Content Goes Here</p>
-    </div>
+      <h1 class="w3-text-blue" id="Data">Data</h1>
+      <p style="color:#FFFFFF";>Our team investigated the NCAA webpage and found team statistics for seasons from 2009-10, 
+        for both the regular season and the March Madness tournament. <br>We decided to download statistics from 18 categories of team statistics for each of the past 12 seasons. 
+        We then copied and pasted each season into a master file.</p>
+        <img src="/Users/baiyuhua/Desktop/March_Madness/Dashboard_Creation/Baiyu/css/images/Yearly_Data.png" 
+        style="object-fit:contain;
+              width:900px;
+              height:300px;
+              border: solid 1px #CCC"/>
+      </div>
     <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Graphs</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">Graphs</p>
     </div>
   </div>
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Analysis</h1>
+      <h1 class="w3-text-blue" id="Analysis">Analysis</h1>
       <p>Our Analysis Content Goes Here</p>
+      <div class='tableauPlaceholder' id='viz1654049952122' style='position: relative'><noscript><a href='#'><img 
+        alt='Losses vs. Wins Detection (RF model) ' 
+        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RY&#47;RYS4M2CRW&#47;1_rss.png' 
+        style='border: none' /></a></noscript><object class='tableauViz'  
+        style='display:none;'><param name='host_url' 
+        value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param 
+        name='path' value='shared&#47;RYS4M2CRW' /> <param name='toolbar' value='yes' /><param 
+        name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RY&#47;RYS4M2CRW&#47;1.png' /> <param 
+        name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' 
+        value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                
+        <script type='text/javascript'>                    
+        var divElement = document.getElementById('viz1654049952122');                    
+        var vizElement = divElement.getElementsByTagName('object')[0];                    
+        vizElement.style.width='800px';vizElement.style.height='827px';                    
+        var scriptElement = document.createElement('script');                    
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
     </div>
     <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Graphs</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">Graphs</p>
     </div>
   </div>
   
    <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Result</h1>
-      <p>Our Result Goes Here</p>
+      <h1 class="w3-text-blue" id="Results">Results</h1>
+      <div class='tableauPlaceholder' id='viz1654050364138' style='position: relative'><noscript><a href='#'><img 
+        alt='March Madness Project ' 
+        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;March_Madness_Final&#47;MarchMadnessProject&#47;1_rss.png' 
+        style='border: none' /></a></noscript><object 
+        class='tableauViz'  style='display:none;'><param 
+        name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param 
+        name='embed_code_version' value='3' /> <param name='site_root' value='' /><param 
+        name='name' value='March_Madness_Final&#47;MarchMadnessProject' /><param 
+        name='tabs' value='no' /><param name='toolbar' value='yes' /><param 
+        name='static_image' 
+        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;March_Madness_Final&#47;MarchMadnessProject&#47;1.png' /> <param 
+        name='animate_transition' value='yes' /><param name='display_static_image' 
+        value='yes' /><param name='display_spinner' value='yes' /><param 
+        name='display_overlay' value='yes' /><param name='display_count' 
+        value='yes' /><param name='language' value='en-US' /></object></div>                
+        <script type='text/javascript'>                    
+        var divElement = document.getElementById('viz1654050364138');                    
+        var vizElement = divElement.getElementsByTagName('object')[0];                    
+        vizElement.style.width='800px';vizElement.style.height='827px';                    
+        var scriptElement = document.createElement('script');                    
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+      </div>
     </div>
     <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Graphs</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">Graphs</p>
-    </div>
-  </div>
-
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
-      <a class="w3-button w3-hover-black" href="#">5</a>
-      <a class="w3-button w3-hover-black" href="#">»</a>
     </div>
   </div>
 
   <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4>Footer</h4>
+      <h4>March Madness Prediction</h4>
     </div>
 
     <div class="w3-container w3-theme-l1">
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      <p>Presented to you by Bryan, Bart, Phillip and Baiyu</p>
     </div>
   </footer>
 
